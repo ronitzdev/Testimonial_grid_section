@@ -1,0 +1,211 @@
+:root {
+    --bg1: hsl(263, 55%, 52%);
+    --bg2: hsl(217, 19%, 35%);
+    --bg3: hsl(0, 0%, 100%);
+    --bg4: hsl(219, 29%, 14%);
+    --bg-background: hsl(0, 0%, 81%);
+    --color: hsl(210, 46%, 95%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-size: 13px;
+
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    background-color: var(--bg-background);
+    color: var(--color);
+
+    font-size: 13px;
+}
+
+.main {
+    height: 100%;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+.card__container {
+    margin: 80px 0;
+    display: grid;
+}
+
+.card {
+
+    position: relative;
+    padding: 29px 43px 40px;
+    overflow: hidden;
+
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card:nth-of-type(1) {
+    background-color: var(--bg1);
+    grid-area: card1;
+}
+
+.card:nth-of-type(2) {
+    background-color: var(--bg2);
+    grid-area: card2;
+}
+
+.card:nth-of-type(3) {
+    background-color: var(--bg3);
+    grid-area: card3;
+    color: #000;
+}
+
+.card:nth-of-type(4) {
+    background-color: var(--bg4);
+    grid-area: card4;
+}
+
+.card:nth-of-type(5) {
+    background-color: var(--bg3);
+    grid-area: card5;
+    color: #000;
+}
+
+.info__witness {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 34px;
+
+}
+
+.info__img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: 1px solid var(--bg-background);
+    width: 32px;
+    height: 32px;
+}
+
+.info__img--1 {
+    background-image: url('/images/image-daniel.jpg');
+}
+
+.info__img--2 {
+    background-image: url('/images/image-jonathan.jpg');
+}
+
+.info__img--3 {
+    background-image: url('/images/image-jeanette.jpg');
+}
+
+.info__img--4 {
+    background-image: url('/images/image-patrick.jpg');
+}
+
+.info__img--5 {
+    background-image: url('/images/image-kira.jpg');
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.name {
+    font-size: 1em;
+}
+
+.copy {
+    color: var(--bg-background);
+    font-size: 0.81em;
+    opacity: 50%;
+}
+
+.modified__copy{
+    color: rgb(128, 128, 128);
+}
+
+.sentence__one {
+    color: var(bg4);
+    font-size: 1.5em;
+    text-align: left;
+    margin-right: 20px;
+
+    
+    z-index: 2;
+}
+
+
+.sentence__two {
+    text-align: left;
+    color: white;
+    opacity: 50%
+}
+
+.modified__sentence{
+    color: var(--bg2);
+    opacity: 50%;
+}
+
+
+
+
+
+
+
+/* Small devices (landscape phones, 375px and up) */
+@media (min-width: 375px) {
+    .card__container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'card1'
+            'card2'
+            'card3'
+            'card4'
+            'card5';
+        gap: 30px;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .card__container {
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            'card1 card1 card2 card5'
+            'card3 card4 card4 card5';
+        }
+       
+        
+    }
+    
+    /* X-Large devices (large desktops, 1200px and up) */
+    @media (min-width: 1440px) {
+        .body{
+            font-size: 16px;
+        }
+        .card__container{
+            max-height: 720px;
+    }
+    .card{
+    gap: 40px;
+}
+
+}
